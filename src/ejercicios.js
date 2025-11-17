@@ -295,22 +295,21 @@ function invertirColores(matriz) {
  */
 function convertirEscalaGrises(matriz) {
   // TODO: Implementar conversión a escala de grises
-  
-  // Para cada pixel:
-  
-    const resultado = copiarMatriz(matriz);
+
+  const resultado = copiarMatriz(matriz);
    for (let i = 0; i < resultado.length; i++) {
      for (let j = 0; j < resultado[i].length; j++) {
-       const pixeles = matriz [i][j];
+       const pixel = matriz [i][j];
+
       // 1. Calcular el valor de gris
        const gris = limitarValorColor(0.299 * pixel.r + 0.587 * pixel.g + 0.114 * pixel.b);
-     }
+
+      // 2. Asignar ese valor a los tres canales
+      resultado[i][j].r=gris;
+      resultado[i][j].g=gris;
+      resultado[i][j].b=gris;
+      }
     }
-  // 2. Asignar ese valor a los tres canales
-   resultado[i][j].r=gris;
-   resultado[i][j].b=gris;
-   resultado[i][j].b=gris;
-  
   return resultado;
 }
 
@@ -336,11 +335,19 @@ function convertirEscalaGrises(matriz) {
  */
 function voltearHorizontal(matriz) {
   // TODO: Implementar volteo horizontal
-  
-  // Pista: Puedes usar .reverse() en cada fila
-  // o construir manualmente invirtiendo el orden
-  
-  return []; // REEMPLAZAR
+  const resultado = copiarMatriz(matriz);
+   for (let i = 0; i < resultado.length; i++) {
+     const filaInvertida = [...matriz[i]].reverse().map( pixel =>({
+      r: pixel.r,
+      g: pixel.g,
+      b: pixel.b,
+      a: pixel.a
+     })
+     );
+     resultado[i]= filaInvertida;
+    }
+    
+  return resultado; // REEMPLAZAR
 }
 
 /**
