@@ -366,9 +366,19 @@ function voltearHorizontal(matriz) {
  * const invertido = voltearVertical(matriz);
  */
 function voltearVertical(matriz) {
-  // TODO: Implementar volteo vertical
-  
-  return []; // REEMPLAZAR
+    const resultado = copiarMatriz(matriz);
+    const alto = resultado.length;
+
+   for (let i = 0; i < resultado.length; i++) {
+      resultado[i]= [...matriz[resultado.length - 1 - i]].map( pixel =>({
+      r: pixel.r,
+      g: pixel.g,
+      b: pixel.b,
+      a: pixel.a
+
+   })); 
+  }
+  return resultado; 
 }
 
 /**
