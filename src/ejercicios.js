@@ -200,13 +200,12 @@ function obtenerCanal(matriz, canal) {
  */
 function obtenerDimensionesImagen(rutaImagen) {
   // TODO: Obtener dimensiones sin cargar toda la imagen en memoria
-  
-  // Pista: Puedes cargar la imagen y usar obtenerDimensiones()
-  // o leer solo el header del PNG
-  
-  return { ancho: 0, alto: 0, totalPixeles: 0 }; // REEMPLAZAR
-}
-
+  //Leer solo los primeros bytes del archivo
+  const buffer = fs.readFileSync(rutaImagen); 
+  const alto= buffer.readUInt32BE(20); //posicion 20 a 23
+  const ancho = buffer.readUInt32BE(16); //posicion 16 a 19
+  return { ancho, alto, totalPixeles: ancho * alto }; 
+  }
 // ============================================
 // SECCIÓN 2: OPERACIONES BÁSICAS (25 puntos)
 // Aplicar álgebra matricial a píxeles
