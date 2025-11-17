@@ -246,9 +246,8 @@ function ajustarBrillo(matriz, factor) {
        // El canal alpha NO se modifica
      }
   
-  
+    }
   return resultado; // REEMPLAZAR
-}
 }
 /**
  * Ejercicio 2.2: Invertir colores (8 puntos)
@@ -269,11 +268,17 @@ function ajustarBrillo(matriz, factor) {
  * // Rojo (255,0,0) → Cian (0,255,255)
  */
 function invertirColores(matriz) {
-  // TODO: Implementar inversión de colores
-  
-  return []; // REEMPLAZAR
+  // Crear una copia pra no midificar la matriz original
+  const resultado = copiarMatriz(matriz);
+  for (let i = 0; i < resultado.length; i++) {
+     for (let j = 0; j < resultado[i].length; j++) {
+       resultado[i][j].r = limitarValorColor(255 - matriz[i][j].r);
+       resultado[i][j].g = limitarValorColor(255 - matriz[i][j].g);
+       resultado[i][j].b = limitarValorColor(255 - matriz[i][j].b);
+     }
+    }
+  return resultado; 
 }
-
 /**
  * Ejercicio 2.3: Convertir a escala de grises (9 puntos)
  * 
