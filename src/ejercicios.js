@@ -165,27 +165,27 @@ function obtenerCanal(matriz, canal) {
   // TODO: Implementar extracción de canal
   
   // 1. Validar parámetros
-  // if (!['r', 'g', 'b'].includes(canal)) {
-  //   throw new Error("El canal debe ser 'r', 'g', o 'b'");
-  // }
+   if (!['r', 'g', 'b'].includes(canal)) {
+     throw new Error("El canal debe ser 'r', 'g', o 'b'");
+   }
   
   // 2. Crear matriz resultado
-  // const resultado = copiarMatriz(matriz);
+   const resultado = copiarMatriz(matriz);
   
   // 3. Para cada pixel, usar solo el valor del canal seleccionado
-  // for (let i = 0; i < resultado.length; i++) {
-  //   for (let j = 0; j < resultado[i].length; j++) {
-  //     const valor = matriz[i][j][canal];
-  //     resultado[i][j] = {
-  //       r: valor,
-  //       g: valor,
-  //       b: valor,
-  //       a: matriz[i][j].a
-  //     };
-  //   }
-  // }
+   for (let i = 0; i < resultado.length; i++) {
+     for (let j = 0; j < resultado[i].length; j++) {
+       const valor = matriz[i][j][canal];
+      resultado[i][j] = {
+         r: valor,
+         g: valor,
+         b: valor,
+         a: matriz[i][j].a
+       };
+     }
+   }
   
-  return []; // REEMPLAZAR CON TU CÓDIGO
+  return resultado; 
 }
 
 /**
