@@ -401,13 +401,22 @@ function voltearVertical(matriz) {
  * const rotada = rotar90Grados(matriz);
  */
 function rotar90Grados(matriz) {
-  // TODO: Implementar rotación de 90 grados
-  
-  // Opción 1: Hacer transpuesta manualmente considerando que son objetos
   // Opción 2: Construir directamente la matriz rotada
   //   nuevoPixel[j][alto - 1 - i] = pixelOriginal[i][j]
-  
-  return []; // REEMPLAZAR
+  //guarda el tamaño de la matriz
+  const m = matriz.length;
+  //creamos una nueva matriz de tamaño n x n, inicializada con 0
+  const rotar =Array.from({length: m }, () => Array(m).fill(0));
+    //iteramos las fila  
+  for (let i = 0; i < m;  i++){
+      //columnas
+      for (let j = 0; j < m; j++){
+        //Formula para hacer la rotación
+         rotar[j][m - 1 - i] = matriz[i][j];
+      }
+      }
+  // Devolvemos la matriz rotada
+  return rotar; 
 }
 
 // ============================================
