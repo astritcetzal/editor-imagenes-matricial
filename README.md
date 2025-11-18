@@ -159,7 +159,7 @@ editor-imagenes-matricial/
 
 ### Función Favorita: rotar90Grados
 
-
+```javascript
 function rotar90Grados(matriz) {
   // Opción 2: Construir directamente la matriz rotada
   //   nuevoPixel[j][alto - 1 - i] = pixelOriginal[i][j]
@@ -178,6 +178,7 @@ function rotar90Grados(matriz) {
   // Devolvemos la matriz rotada
   return rotar; 
 }
+```
 
 **Por qué me gusta:**
 - Porque se crea una nueva matriz y de ahi se van iterandoo las filas, luego las columnas, para luego utilizar la fórmula para hacer la rotación. En general, esta función fue la que más me gustó mas que nada porque la imagen se rota 90 grados en sentido horario.
