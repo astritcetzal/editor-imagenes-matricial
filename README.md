@@ -158,6 +158,8 @@ editor-imagenes-matricial/
 ---
 
 ### Función Favorita: rotar90Grados
+
+
 function rotar90Grados(matriz) {
   // Opción 2: Construir directamente la matriz rotada
   //   nuevoPixel[j][alto - 1 - i] = pixelOriginal[i][j]
@@ -211,7 +213,9 @@ git log --oneline --graph --decorate
 
 ---
 **Commits destacados:**
-- `feat: 
+- `feat: Cargar imagen png y convertir a matriz`
+- `feat: Voltear matriz horizontalmente`
+- `feat: Rotar imagen a 90 grados`
 - `docs: Actualizar README con resultados finales`
 
 ---
@@ -244,5 +248,4 @@ Este proyecto es parte de las actividades académicas del **Tecnológico de Soft
 Hecho con 💙 por [Astrit Cetzal] - 2025
 
 </div>
-
 
