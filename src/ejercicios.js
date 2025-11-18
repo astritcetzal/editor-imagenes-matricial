@@ -87,8 +87,6 @@ function imagenAMatriz(rutaImagen) {
   
   // 6. Retornar la matriz
    return matriz;
-  
- // return []; // REEMPLAZAR CON TU CÓDIGO
 }
 
 /**
